@@ -18,7 +18,7 @@ const checkSchemeId = async (req, res, next) => {
         status: 404,
         message: `scheme with scheme_id ${req.params.scheme_id} Not Found`
       })
-    }else {
+    } else {
       next()
     }
   } catch (err) {
@@ -36,7 +36,15 @@ const checkSchemeId = async (req, res, next) => {
   }
 */
 const validateScheme = (req, res, next) => {
-
+  if (
+    scheme_name = undefined || typeof
+    scheme_name_name !== 'string' ||
+    scheme_name.trim()
+  ) {
+    next({ status: 400, message: "invalid scheme_name" })
+  } else {
+    next()
+  }
 }
 
 /*
